@@ -1,4 +1,4 @@
-#PSG712 16M USB+Adbyby+Aliddns+SS
+#PSG712 16M USB+Adbyby+Aliddns+SS+在线文件管理+远程下载
 name: Build Padavan
 
 on: 
@@ -78,6 +78,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_AUDIO/d' .config #删除配置项 音频设备支持
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LPRD/d' .config #删除配置项 打印机支持
         sed -i '/CONFIG_FIRMWARE_INCLUDE_U2EC/d' .config #删除配置项 外网远程打印
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION/d' .config #删除配置项TRANSMISSION
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL/d' .config #删除配置项TRANSMISSION_WEB_CONTROL
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA/d' .config #删除配置项Aria
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL/d' .config #删除配置项Aria的网页配置
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TCPDUMP/d' .config #删除配置项 
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HDPARM/d' .config #删除配置项 硬盘休眠
         sed -i '/CONFIG_FIRMWARE_INCLUDE_PARTED/d' .config #删除配置项 GPT硬盘支持
@@ -132,7 +136,7 @@ jobs:
         echo "CONFIG_FIRMWARE_ENABLE_EXT4=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_ENABLE_FUSE=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_UVC=n" >> .config  #添加USB支持
-        echo "CONFIG_FIRMWARE_INCLUDE_SERIAL=y" >> .config  #添加USB支持
+        echo "CONFIG_FIRMWARE_INCLUDE_SERIAL=n" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_AUDIO=n" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_LPRD=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_U2EC=y" >> .config  #添加USB支持
@@ -141,6 +145,10 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_PARTED=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD=y" >> .config  #添加smaba支持
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=y" >> .config  #添加SMBD3.6功能
+        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=y" >> .config #集成远程下载
+        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config #集成远程下载的配置网页
+        echo "CONFIG_FIRMWARE_INCLUDE_ARIA=n" >> .config #Aria
+        echo "CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n" >> .config #Aria的网页控制
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config  #去除SSH功能
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config  #去除SFTP功能
         #echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config  #去除EAP_PEAP功能
