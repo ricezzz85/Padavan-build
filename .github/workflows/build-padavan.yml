@@ -1,4 +1,4 @@
-#K1 8M Adbyby+Aliddns+2.7驱动
+#K1 8M Adbyby+Aliddns+2.7驱动+lemontreenm
 name: Build Padavan
 
 on: 
@@ -32,7 +32,7 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+        git clone --depth=1 https://github.com/lemontreenm/rt-n56u.git /opt/rt-n56u
         cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
