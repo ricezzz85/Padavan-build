@@ -87,7 +87,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_PARTED/d' .config #删除配置项 GPT硬盘支持
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD/d' .config #删除配置项 Smaba1.0支持
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config #删除配置项 Smaba3.6支持
-        #sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config #删除SSH功能配置项
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config #删除SSH功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config #删除SFTP功能配置项
         #sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config #删除EAP_PEAP功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config #删除配置项 HTOP
@@ -156,7 +156,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除NANO功能
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config  #调价IPERF3功能
         echo "CONFIG_FIRMWARE_WEBUI_HIDE_VPN=n" >> .config  #VPN功能不隐藏
-        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config #zerotier ~1.3M
+        echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
         #格式如下：
