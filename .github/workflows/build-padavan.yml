@@ -129,8 +129,8 @@ jobs:
         echo "CONFIG_FIRMWARE_ENABLE_UFSD=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_ENABLE_FAT=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_ENABLE_EXFAT=y" >> .config  #添加USB支持
-        echo "CONFIG_FIRMWARE_ENABLE_EXT2=y" >> .config  #添加USB支持
-        echo "CONFIG_FIRMWARE_ENABLE_EXT3=y" >> .config  #添加USB支持
+        echo "CONFIG_FIRMWARE_ENABLE_EXT2=n" >> .config  #添加USB支持
+        echo "CONFIG_FIRMWARE_ENABLE_EXT3=n" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_ENABLE_EXT4=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_ENABLE_FUSE=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_UVC=n" >> .config  #添加USB支持
