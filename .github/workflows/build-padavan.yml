@@ -60,7 +60,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config #删除配置项内网穿透FRPS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config #删除配置项TUNSAFE
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config #删除配置项阿里DDNS
-        #sed -i '/CONFIG_FIRMWARE_WIFI2_DRIVER/d' .config #删除2.4G驱动配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config #删除用于 IPTV 的 XUPNP配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM/d' .config #删除用于 Drcom 的工具配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIEAP/d' .config #删除可用于锐捷的 eap 客户端配置项
@@ -122,7 +121,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
         echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
         echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config #网易云解锁GO版本执行文件（4M多）注意固件超大小,不集成会自动下载
-        #echo "CONFIG_FIRMWARE_WIFI2_DRIVER=3.0" >> .config #2.4G驱动设置为3.0 
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> .config #去除用于 IPTV 的 XUPNP        
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> .config  #去除用于 Drcom 的工具
         echo "CONFIG_FIRMWARE_INCLUDE_MINIEAP=n" >> .config  #去除可用于锐捷的 eap 客户端
@@ -136,7 +134,7 @@ jobs:
         echo "CONFIG_FIRMWARE_ENABLE_EXT4=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_ENABLE_FUSE=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_UVC=n" >> .config  #添加USB支持
-        echo "CONFIG_FIRMWARE_INCLUDE_SERIAL=n" >> .config  #添加USB支持
+        echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
         echo "CONFIG_FIRMWARE_INCLUDE_AUDIO=n" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_LPRD=y" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_U2EC=y" >> .config  #添加USB支持
@@ -152,8 +150,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config  #去除SSH功能
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config  #去除SFTP功能
         #echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config  #去除EAP_PEAP功能
-        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config  #去除HTOP功能
-        echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除NANO功能
+        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=y" >> .config  #去除HTOP功能
+        echo "CONFIG_FIRMWARE_INCLUDE_NANO=y" >> .config  #去除NANO功能
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config  #调价IPERF3功能
         echo "CONFIG_FIRMWARE_WEBUI_HIDE_VPN=n" >> .config  #VPN功能不隐藏
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
