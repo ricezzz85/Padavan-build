@@ -88,7 +88,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config #删除配置项 Smaba3.6支持
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config #删除SSH功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config #删除SFTP功能配置项
-        #sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config #删除EAP_PEAP功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config #删除配置项 HTOP
         sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO/d' .config #删除配置项 NANO
         sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config #删除配置项 IPERF3
@@ -149,7 +148,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n" >> .config #Aria的网页控制
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config  #去除SSH功能
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config  #去除SFTP功能
-        #echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config  #去除EAP_PEAP功能
         echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config  #去除HTOP功能
         echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除NANO功能
         echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config  #调价IPERF3功能
