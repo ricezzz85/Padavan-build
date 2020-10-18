@@ -50,7 +50,6 @@ jobs:
         ################################################################################################
         #因不同型号配置功能不一样，所以先把配置项删除，如果你自己要添加其他的，也要写上删除这一条，切记！！！
         ################################################################################################
-        #sed -i '/CONFIG_FIRMWARE_PRODUCT_ID/d' .config #删除配置项 PRODUCT_ID
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MENTOHUST/d' .config #删除配置项MENTOHUST
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT/d' .config #删除配置项SCUTCLIENT
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS/d' .config #删除配置项SS plus+
@@ -61,7 +60,7 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config #删除配置项内网穿透FRPS
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TUNSAFE/d' .config #删除配置项TUNSAFE
         sed -i '/CONFIG_FIRMWARE_INCLUDE_ALIDDNS/d' .config #删除配置项阿里DDNS
-        #sed -i '/CONFIG_FIRMWARE_WIFI2_DRIVER/d' .config #删除2.4G驱动配置项
+        sed -i '/CONFIG_FIRMWARE_WIFI2_DRIVER/d' .config #删除2.4G驱动配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_XUPNPD/d' .config #删除用于 IPTV 的 XUPNP配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_DOGCOM/d' .config #删除用于 Drcom 的工具配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_MINIEAP/d' .config #删除可用于锐捷的 eap 客户端配置项
@@ -69,7 +68,6 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config #删除SSH功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config #删除SFTP功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config #删除SMBD3.6功能配置项
-        #sed -i '/CONFIG_FIRMWARE_INCLUDE_EAP_PEAP/d' .config #删除EAP_PEAP功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config #删除TTYD配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ/d' .config #删除LRZSZ配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config #删除HTOP配置项
@@ -80,7 +78,6 @@ jobs:
         ######################################################################
         #以下选项是定义你需要的功能（y=集成,n=忽略），重新写入到.config文件
         ######################################################################
-        #echo "CONFIG_FIRMWARE_PRODUCT_ID="K1"" >> .config #重命名设备名称
         echo "CONFIG_FIRMWARE_INCLUDE_MENTOHUST=n" >> .config #MENTOHUST
         echo "CONFIG_FIRMWARE_INCLUDE_SCUTCLIENT=n" >> .config #SCUTCLIENT
         echo "CONFIG_FIRMWARE_INCLUDE_SHADOWSOCKS=n" >> .config #SS plus+
@@ -104,7 +101,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_WYY=n" >> .config #网易云解锁
         #echo "CONFIG_FIRMWARE_CPU_SLEEP=y" >> .config #CPU降频节能
         echo "CONFIG_FIRMWARE_INCLUDE_WYYBIN=n" >> .config #网易云解锁GO版本执行文件（4M多）注意固件超大小,不集成会自动下载
-        #echo "CONFIG_FIRMWARE_WIFI2_DRIVER=3.0" >> .config #2.4G驱动设置为3.0 
+        echo "CONFIG_FIRMWARE_WIFI2_DRIVER=3.0" >> .config #2.4G驱动设置为3.0 
         echo "CONFIG_FIRMWARE_INCLUDE_XUPNPD=n" >> .config #去除用于 IPTV 的 XUPNP        
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> .config  #去除用于 Drcom 的工具
         echo "CONFIG_FIRMWARE_INCLUDE_MINIEAP=n" >> .config  #去除可用于锐捷的 eap 客户端
@@ -116,7 +113,6 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_LRZSZ=n" >> .config  #去除
         echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config  #去除
         echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除
-        #echo "CONFIG_FIRMWARE_INCLUDE_EAP_PEAP=n" >> .config  #去除EAP_PEAP功能
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
