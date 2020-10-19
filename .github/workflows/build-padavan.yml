@@ -1,5 +1,5 @@
 #K2 8M Adbyby+Aliddns+2.7驱动
-name: Build Padavan
+name: Build K2
 
 on: 
   release:
