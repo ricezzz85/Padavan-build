@@ -1,5 +1,5 @@
 #K2 8M Adbyby+Aliddns+2.7驱动
-name: Build K2
+name: Build Padavan
 
 on: 
   release:
@@ -7,8 +7,8 @@ on:
   push:
     tags:
     - 'v*'
-  #  branches: 
-  #    - master
+    branches: 
+      - K2
 #  schedule:
 #    - cron: 0 8 * * 5
   watch:
