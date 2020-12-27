@@ -142,8 +142,8 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_PARTED=n" >> .config  #添加USB支持
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD=y" >> .config  #添加smaba支持
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=y" >> .config  #添加SMBD3.6功能
-        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=y" >> .config #集成远程下载
-        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config #集成远程下载的配置网页
+        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION=n" >> .config #集成远程下载
+        echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=n" >> .config #集成远程下载的配置网页
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA=n" >> .config #Aria
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n" >> .config #Aria的网页控制
         echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config  #去除SSH功能
