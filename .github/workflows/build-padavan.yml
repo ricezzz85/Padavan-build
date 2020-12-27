@@ -114,7 +114,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_TROJAN=y" >> .config #集成trojan执行文件(1.1M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_KOOLPROXY=n" >> .config #KP广告过滤
-        echo "CONFIG_FIRMWARE_INCLUDE_CADDY=n" >> .config #在线文件管理服务
+        echo "CONFIG_FIRMWARE_INCLUDE_CADDY=y" >> .config #在线文件管理服务
         echo "CONFIG_FIRMWARE_INCLUDE_CADDYBIN=n" >> .config #集成caddu执行文件，此文件有13M,请注意固件大小。如果不集成，会从网上下载下来执行，不影响正常使用
         echo "CONFIG_FIRMWARE_INCLUDE_ADGUARDHOME=n" >> .config
         echo "CONFIG_FIRMWARE_INCLUDE_SRELAY=n" >> .config #可以不集成
@@ -146,7 +146,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=y" >> .config #集成远程下载的配置网页
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA=n" >> .config #Aria
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n" >> .config #Aria的网页控制
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config  #去除SSH功能
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config  #去除SSH功能
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config  #去除SFTP功能
         echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config  #去除HTOP功能
         echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除NANO功能
