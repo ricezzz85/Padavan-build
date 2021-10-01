@@ -33,14 +33,14 @@ jobs:
     - name: Clone source code
       run: |
         git clone --depth=1 https://github.com/lemontreenm/rt-n56u-by-chongshengB.git /opt/padavan
-        cd /opt/padavan/toolchain-mipsel
+        cd /opt/rt-n56u/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
         TNAME: PSG1208
       run: |
-        cd /opt/padavan/trunk
+        cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
         exit 1
