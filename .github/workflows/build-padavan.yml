@@ -69,6 +69,10 @@ jobs:
         sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config #删除SSH功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config #删除SFTP功能配置项
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMBD36/d' .config #删除SMBD3.6功能配置项
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_TTYD/d' .config #删除TTYD配置项
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_LRZSZ/d' .config #删除LRZSZ配置项
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config #删除HTOP配置项
+        sed -i '/CONFIG_FIRMWARE_INCLUDE_NANO/d' .config #删除NANO   配置项    
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SMARTDNS/d' .config 
         sed -i '/CONFIG_FIRMWARE_INCLUDE_SRELAY/d' .config 
         sed -i 's/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=n/CONFIG_FIRMWARE_INCLUDE_OPENSSL_EXE=y/g' .config
@@ -87,7 +91,7 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_TUNSAFE=n" >> .config #TUNSAFE
         echo "CONFIG_FIRMWARE_INCLUDE_ALIDDNS=y" >> .config #阿里DDNS
         echo "CONFIG_FIRMWARE_INCLUDE_NAPT66=y" >> .config #配置NAPT66
-        echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=y" >> .config #配置KMS
+        echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=n" >> .config #配置KMS
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNS=n" >> .config #smartdns
         echo "CONFIG_FIRMWARE_INCLUDE_SMARTDNSBIN=n" >> .config #smartdns二进制文件
         echo "CONFIG_FIRMWARE_INCLUDE_V2RAY=n" >> .config #集成v2ray执行文件（3.8M左右)，如果不集成，会从网上下载下来执行，不影响正常使用
@@ -103,9 +107,13 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_DOGCOM=n" >> .config  #去除用于 Drcom 的工具
         echo "CONFIG_FIRMWARE_INCLUDE_MINIEAP=n" >> .config  #去除可用于锐捷的 eap 客户端
         echo "CONFIG_FIRMWARE_INCLUDE_NJIT_CLIENT=n" >> .config  #去除南工网络客户端
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config  #SSH功能
-        echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config  #SFTP功能
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config  #SSH功能
+        echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config  #SFTP功能
         echo "CONFIG_FIRMWARE_INCLUDE_SMBD36=n" >> .config  #去除SMBD3.6功能
+        echo "CONFIG_FIRMWARE_INCLUDE_TTYD=n" >> .config  #去除
+        echo "CONFIG_FIRMWARE_INCLUDE_LRZSZ=n" >> .config  #去除
+        echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config  #去除
+        echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         #########################################################################################
         #自定义添加其它功能请参考源码configs/templates/目录下的config文件。按照上面的格式添加即可
