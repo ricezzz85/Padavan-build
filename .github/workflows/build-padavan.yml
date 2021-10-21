@@ -32,8 +32,8 @@ jobs:
         pkg-config zlib1g-dev libgmp3-dev libmpc-dev libmpfr-dev libncurses5-dev libltdl-dev wget
     - name: Clone source code
       run: |
-        git clone --depth=1 https://github.com/sunnyguhz/Padavan.git /opt/rt-n56u
-        cd /opt/rt-n56u/toolchain-mipsel
+        git clone --depth=1 https://github.com/sunnyguhz/Padavan.git /opt/Padavan
+        cd /opt/Padavan/toolchain-mipsel
         sh dl_toolchain.sh
         mkdir -p /opt/images/
     - name: Build Firmware
@@ -146,11 +146,11 @@ jobs:
         echo "CONFIG_FIRMWARE_INCLUDE_TRANSMISSION_WEB_CONTROL=n" >> .config #集成远程下载的配置网页
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA=n" >> .config #Aria
         echo "CONFIG_FIRMWARE_INCLUDE_ARIA_WEB_CONTROL=n" >> .config #Aria的网页控制
-        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config  #SSH功能
+        echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=n" >> .config  #SSH功能
         echo "CONFIG_FIRMWARE_INCLUDE_SFTP=n" >> .config  #去除SFTP功能
         echo "CONFIG_FIRMWARE_INCLUDE_HTOP=n" >> .config  #去除HTOP功能
         echo "CONFIG_FIRMWARE_INCLUDE_NANO=n" >> .config  #去除NANO功能
-        echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config  #调价IPERF3功能
+        echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=n" >> .config  #调价IPERF3功能
         echo "CONFIG_FIRMWARE_WEBUI_HIDE_VPN=n" >> .config  #VPN功能不隐藏
         echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=n" >> .config #zerotier ~1.3M
         #########################################################################################
