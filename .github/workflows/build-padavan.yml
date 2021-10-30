@@ -38,8 +38,8 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: PSG712
-      run: |
+        TNAME:PSG712
+        run: |
         cd /opt/Padavan/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
