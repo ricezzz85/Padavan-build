@@ -39,7 +39,7 @@ jobs:
     - name: Build Firmware
       env:
         TNAME:PSG712
-        run: |
+      run: |
         cd /opt/Padavan/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
         echo "configs/templates/$TNAME.config not found "
